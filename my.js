@@ -5,7 +5,6 @@ function bind(func, context, param){
     var arr = Array.prototype.slice.call(arguments, 2);
     return function(){
        var sum = arr.concat(Array.prototype.slice.call(arguments));
-        console.log(sum);
        return func.apply(context, sum);
     }
 }
@@ -22,3 +21,4 @@ let user = {
 };
 
 sum = bind(sum, user, 10);
+sum(1,1,1); // 12
